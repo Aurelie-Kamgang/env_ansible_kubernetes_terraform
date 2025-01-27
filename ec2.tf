@@ -108,7 +108,8 @@ resource "null_resource" "deploy" {
        "mkdir -p ~/.kube",
        "cp /etc/rancher/k3s/k3s.yaml ~/.kube/config",
        "sudo chmod 600 ~/.kube/config",
-       "sudo apt install python3-kubernetes -y"
+       "sudo apt install python3-kubernetes -y",
+       "ansible-galaxy collection install community.kubernetes"
 
     ]
   }
